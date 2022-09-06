@@ -71,7 +71,7 @@
                                     </li>
                                 </a>
                                 <a href="{{route('projects')}}"> <li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>Projects</li> </a>
-                                <a href="{{route('poducts')}}"><li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>Products</li></a>
+                                <a href="{{route('products')}}"><li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>Products</li></a>
                                 <a href="{{route('contact')}}">
                                     <li>
                                         <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>Contact
