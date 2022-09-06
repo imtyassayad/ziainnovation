@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// public routes
+Route::get('/',[FrontController::class,'index'])->name('home');
+Route::get('/about',[FrontController::class,'about'])->name('about');
+Route::get('/services',[FrontController::class,'service'])->name('service');
+Route::get('/service/{id}',[FrontController::class,'serviceShow'])->name('service.view');
+Route::get('/porducts',[FrontController::class,'product'])->name('product');
+Route::get('/product/{id}',[FrontController::class,'productShow'])->name('product.view');
+Route::get('/porjects',[FrontController::class,'project'])->name('project');
+Route::get('/contact',[FrontController::class,'contact'])->name('contact');
+
