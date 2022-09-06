@@ -27,8 +27,8 @@ Route::get('/',[FrontController::class,'index'])->name('home');
 Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/services',[FrontController::class,'service'])->name('services');
 Route::get('/service/{id}',[FrontController::class,'serviceShow'])->name('service.view');
-Route::get('/porducts',[FrontController::class,'product'])->name('products');
+Route::get('/porducts',[FrontController::class,'products'])->name('products');
 Route::get('/product/{id}',[FrontController::class,'productShow'])->name('product.view');
-Route::get('/projects',[FrontController::class,'project'])->name('projects');
+Route::get('/projects',[FrontController::class,'projects'])->name('projects');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 
