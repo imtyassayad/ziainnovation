@@ -17,7 +17,7 @@ class FrontController extends Controller
     }
     public function service()
     {
-        //
+        return view('web.service');
     }
     public function serviceShow()
     {
@@ -37,7 +37,7 @@ class FrontController extends Controller
     }
     public function contact()
     {
-        //
+        return view('web.contact');
     }
 }
 
