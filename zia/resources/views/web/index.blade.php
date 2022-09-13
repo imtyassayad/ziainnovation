@@ -1,6 +1,5 @@
 @extends('layouts.web')
 @section('innerstyle')
-
 @endsection
 @section('content')
     <div class="slider-area">
@@ -90,7 +89,7 @@
         </div>
     </div>
 
-    <x-web.service/>
+    <x-web.service />
 
     <div class="home-about-area">
         <div class="container">
@@ -335,7 +334,7 @@
         </div>
     </div>
 
-    <x-web.team/>
+    <x-web.team />
 
     {{-- <x-web.cta/> --}}
 
@@ -442,7 +441,7 @@
                         <div class="news-image">
                             <a href="single-news.html"><img src="{{ asset('web/img/news/2.png') }}" alt="" /></a>
                             <div class="news-date">
-                            <p>10 <br />June<br />2016</p>
+                                <p>10 <br />June<br />2016</p>
                             </div>
                         </div>
                         <h3>
@@ -456,11 +455,10 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="single-news">
                         <div class="news-image">
-                            <a href="single-news.html"><img src="{{ asset('web/img/news/3.png') }}"
-                                    alt="" /></a>
+                            <a href="single-news.html"><img src="{{ asset('web/img/news/3.png') }}" alt="" /></a>
                             <div class="news-date">
                                 <p>10 <br />June<br />2016</p>
-                                </div>
+                            </div>
                         </div>
                         <h3>
                             <a href="single-news.html">Why People Choose Zia Innovation</a>
@@ -521,8 +519,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 @section('innerjs')
-
 @endsection

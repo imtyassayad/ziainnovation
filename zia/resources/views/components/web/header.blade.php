@@ -43,17 +43,17 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="main-menu">
                         <ul>
-                            <li class="active">
+                            <li class="{{request()->is('/') ? 'active' : ''}}">
                                 <a href="{{route('home')}}">Home <span></span> </a>
                             </li>
-                            <li><a href="{{route('about')}}">About </a></li>
-                            <li>
+                            <li class="{{request()->is('about') ? 'active' : ''}}"><a href="{{route('about')}}">About </a></li>
+                            <li class="{{request()->is('services') ? 'active' : ''}}">
                                 <a href="{{route('services')}}">Services <span></span></a>
                             </li>
-                            <li>
+                            <li class="{{request()->is('projects') ? 'active' : ''}}">
                                 <a href="{{route('projects')}}">Projects <span></span> </a>
                             </li>
-                            <li>
+                            <li class="{{request()->is('products') ? 'active' : ''}}">
                                 <a href="{{route('products')}}">Products <span></span> </a>
                             </li>
                             <!-- <li><a href="news.html">Graphics <span></span> </a>
@@ -66,7 +66,7 @@
                                     <li><a href="404.html">Error Page</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="{{route('contact')}}">Contact</a></li>
+                            <li class="{{request()->is('contact') ? 'active' : ''}}"><a href="{{route('contact')}}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
