@@ -31,9 +31,9 @@ class FrontController extends Controller
     {
         return view('web.products');
     }
-    public function proudctShow()
-    {
-        //
+    public function productShow($id)
+    {   $arr['name'] = $id;
+        return view('web.product')->with($arr);
     }
     public function contact()
     {
