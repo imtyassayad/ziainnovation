@@ -17,13 +17,17 @@
                         <ul>
                             <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="https://digitalcenturysf.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f567179705f6976746b706d317c7072">[email&#160;protected]</a></li> -->
                             <li>
-                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                info@ziainnovation.com
+                                <a href="mailto:support@ziainnovation.com" style="color: #cacaca">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    support@ziainnovation.com
+                                </a>
                             </li>
 
                             <li>
-                                <i class="fa fa-phone" aria-hidden="true"></i> +91 8070 10
-                                10 17
+                                <a href="tel:+918070101017" style="color: #cacaca">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> +91 8070 10
+                                    10 17
+                                </a>
                             </li>
                         </ul>
                     </div>

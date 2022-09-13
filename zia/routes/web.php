@@ -29,7 +29,7 @@ Route::controller(FrontController::class)->group(function () {
     Route::get('/about','about')->name('about');
     Route::get('/services','service')->name('services');
     Route::get('/service/{id}','serviceShow')->name('service.view');
-    Route::get('/porducts','products')->name('products');
+    Route::get('/products','products')->name('products');
     Route::get('/product/{id}','productShow')->name('product.view');
     Route::get('/projects','projects')->name('projects');
     Route::get('/contact','contact')->name('contact');

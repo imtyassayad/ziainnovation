@@ -25,11 +25,11 @@ class FrontController extends Controller
     }
     public function projects()
     {
-        //
+       return view('web.projects');
     }
     public function products()
     {
-        //
+        return view('web.products');
     }
     public function proudctShow()
     {
