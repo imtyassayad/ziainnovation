@@ -10,20 +10,24 @@
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="project-content-area">
+
+                        @foreach ($products as $item)
+
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
                             <div class="single-project-one">
                                 <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/hira.png')}}" alt=""></a>
+                                    <a href="#"><img src="{{asset('storage/assets/products/'.$item->img)}}" alt=""></a>
                                     <div class="overley">
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                                            <li><a href="{{route('product.view',$item->slug)}}"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <h3><a href="single-project.html">Hira bakery</a></h3>
+                                <h3><a href="single-project.html">{{$item->name}}</a></h3>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
+                        @endforeach
+                        {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
                             <div class="single-project-one">
                                 <div class="project-feature-image">
                                     <a href="#"><img src="{{asset('web/img/project/color.png')}}" alt=""></a>
@@ -87,7 +91,7 @@
                                 </div>
                                 <h3><a href="#">DRL Cargo</a></h3>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="row">

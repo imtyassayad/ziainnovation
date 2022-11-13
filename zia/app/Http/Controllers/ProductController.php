@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $arr['products'] = Product::all();
+        return view('back.products.index')->with($arr);
     }
 
     /**
@@ -24,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $arr['services'] = Service::all();
+        return view('back.products.add')->with($arr);
     }
 
     /**
@@ -33,9 +36,23 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $pr)
     {
-        //
+        // return $request;
+        // getting imgage original name
+        $image = $request->file('img')->getClientOriginalName();
+
+        //storing image in folder
+        $request->img->storeAs ('public/assets/products', $image);
+
+        $pr->service_id = $request->service;
+        $pr->name = $request->name;
+        $pr->slug = $request->slug;
+        $pr->status = $request->status;
+        $pr->description = $request->desc;
+        $pr->img = $image;
+        $pr->save();
+        return back()->with('success','Prdouct Created Successfully.');
     }
 
     /**

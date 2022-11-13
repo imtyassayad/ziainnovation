@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Mail\ContactMail;
+use App\Models\Product;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -43,7 +44,8 @@ class FrontController extends Controller
 
     public function products()
     {
-        return view('web.products');
+        $arr['products'] = Product::where('status',1)->get();
+        return view('web.products')->with($arr);
     }
     public function productShow($id)
     {
