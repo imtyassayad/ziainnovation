@@ -10,16 +10,23 @@
     <link href="{{asset('back/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
     <script src="{{asset('back/assets/js/loader.js')}}"></script>
 
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('back/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('back/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{asset('back/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('back/assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <x-back.style />
+
+
+    @yield('innerStlye')
+    <style>
+        .alert-block{
+            position: absolute;
+            right: 10px ;
+            z-index: 999;
+            min-width: 30%;
+
+
+            transition: all .5s ease-in;
+
+        }
+    </style>
 
 </head>
 <body>
@@ -49,7 +56,7 @@
 
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
-
+            @include('flash-message')
            @yield('content')
 
             <div class="footer-wrapper">
@@ -81,10 +88,7 @@
     <script src="{{asset('back/assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{asset('back/plugins/apex/apexcharts.min.js')}}"></script>
-    <script src="{{asset('back/assets/js/dashboard/dash_2.js')}}"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    @yield('innerJs')
 
 </body>
 

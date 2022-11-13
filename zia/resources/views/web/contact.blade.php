@@ -28,15 +28,14 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="single-contact-box">
                         <!-- <p><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="https://digitalcenturysf.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf5f2faf3dceaf5f7e8f3eefaf5f2fdf2fff9b2fff3f1">[email&#160;protected]</a><br /><span><a href="https://digitalcenturysf.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83d0f6f3f3ecf1f7c3f5eae8f7ecf1e5eaede2ede0e6ade0ecee">[email&#160;protected]</a></span></p> -->
-                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>info@ziainnovation.com</span></p>
-                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>sale@ziainnovation.com</span></p>
+                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>{{$setting->email_one}}</span></p>
+                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>{{$setting->email_two}}</span></p>
 
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="single-contact-box last-child">
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> +91 7769 03 5251 <br /> <span>+91 8070 10
-                                1017</span></p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{$setting->contact_one}} <br /><span>{{$setting->contact_two}}</span></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +43,8 @@
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="leave-comments-area">
                         <h4>Leave Coomments</h4>
-                        <form action="mail.php" method="POST">
+                        <form action="{{route('contact.mail')}}" method="POST">
+                            @csrf
                             <fieldset>
                                 <div class="col-sm-6">
                                     <div class="form-group">

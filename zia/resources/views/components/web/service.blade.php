@@ -1,32 +1,31 @@
 <div class="service-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="single-service">
-                    <div class="media">
-                        <div class="pull-left">
-                            <a href="single-services.html">
-                                <span class="flaticon-graph"></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                <a href="single-services.html">Developemt</a>
-                            </h4>
-                            <p>
-                                Software development is the process of conceiving,
-                                specifying, designing, programming, documenting, testing,
-                                and bug fixing involved in creating and maintaining
-                                applications, frameworks, or other software components.
-                            </p>
-                            <div class="read-more">
-                                <!-- <a href="single-services.html">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
+            @foreach ($services as $item)
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-service">
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="{{route('services.show',$item->id)}}">
+                                    <span class="{{$item->icon}}"></span>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <a href="{{route('services.show',$item->id)}}">{{$item->title}}</a>
+                                </h4>
+                                <p>
+                                    {{$item->description}}
+                                </p>
+                                <div class="read-more">
+                                    <!-- <a href="single-services.html">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            @endforeach
+            {{-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="single-service">
                     <div class="media">
                         <div class="pull-left">
@@ -75,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

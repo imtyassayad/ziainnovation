@@ -6,8 +6,7 @@
                     <div class="footer-top">
                         <p>Quick Contact Us</p>
                         <h2>
-                            <i class="fa fa-phone" aria-hidden="true"></i> +91 8070 10 10
-                            17
+                            <i class="fa fa-phone" aria-hidden="true"></i> {{$setting->contact_two}}
                         </h2>
                     </div>
                 </div>
@@ -87,24 +86,22 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>Alandi-markal road,
-                                    Pune-412105
+                                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>{{$setting->address}}
                                 </li>
                                 <li>
-                                    <a href="tel:+918070101017" style="color: #fff">
+                                    <a href="tel:{{$setting->contact_two}}" style="color: #fff">
                                         <i class="fa fa-phone" aria-hidden="true"></i>
-                                        +91 8070 10 10 17
+                                        {{$setting->contact_two}}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="tel:+917769035251" style="color: #fff">
-                                        <i class="fa fa-phone" aria-hidden="true"></i>+91 7769 03
-                                        52 51
+                                    <a href="tel:{{$setting->contact_one}}" style="color: #fff">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>{{$setting->contact_one}}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:support@ziainnovation.com" style="color: #fff">
-                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>support@ziainnovation.com
+                                    <a href="mailto:{{$setting->email_two}}" style="color: #fff">
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>{{$setting->email_two}}
                                     </a>
                                 </li>
 

@@ -1,11 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DashboardController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +37,28 @@ Route::controller(FrontController::class)->group(function () {
     Route::get('/products','products')->name('products');
     Route::get('/product/{id}','productShow')->name('product.view');
     Route::get('/projects','projects')->name('projects');
+    Route::get('projects-by-service/{id}','projectfilter')->name('projects-by-service');
     Route::get('/contact','contact')->name('contact');
+    Route::post('/sendcontact','contactMail')->name('contact.mail');
 });
 
 
 //protedc routes
-Route::prefix('admin')->group(function(){
+Route::middleware('auth')->prefix('admin')->group(function(){
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+    Route::controller(SettingController::class)->group(function () { });
+    Route::resource('services', ServiceController::class);
+    Route::resource('products', ProductController::class);
+
+    Route::resource('projects', ProjectController::class);
 });
+
+// Route::get('create',function(){
+
+//     User::create([
+//         'name' => 'Admin',
+//         'email' => 'admin@ziainnovation.com',
+//         'password' => Hash::make('Is@21048507#')
+//     ]);
+//     return back();
+// });

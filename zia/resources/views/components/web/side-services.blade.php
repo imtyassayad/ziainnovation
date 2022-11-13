@@ -6,7 +6,7 @@
                 <li><a href="#">Static devlopment</a></li>
                 <li><a href="#">Dynamic Development</a></li>
                 <li><a href="#">E-Commerce Development</a></li>
-                <li><a href="#">HRM Development</a></li>
+                <li><a href="{{route('projects-by-service',10)}}">HRM Development</a></li>
                 <li><a href="#">ERP Development</a></li>
                 <li><a href="#">CMS Development</a></li>
                 <li><a href="#">Garpric Designing</a></li>

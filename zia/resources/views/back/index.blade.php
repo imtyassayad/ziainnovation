@@ -1,5 +1,10 @@
 @extends('layouts.back')
 @section('innerStlye')
+
+   <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+   <link href="{{asset('back/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+   <link href="{{asset('back/assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
+   <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 @endsection
 @section('content')
     <div class="layout-px-spacing">
@@ -736,4 +741,8 @@
     </div>
 @endsection
 @section('innerJs')
+   <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+   <script src="{{asset('back/plugins/apex/apexcharts.min.js')}}"></script>
+   <script src="{{asset('back/assets/js/dashboard/dash_2.js')}}"></script>
+   <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 @endsection

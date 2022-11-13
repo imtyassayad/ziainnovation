@@ -6,9 +6,7 @@
                     <div class="header-top-left">
                         <ul>
                             <li>
-                                <i class="fa fa-globe" aria-hidden="true"></i> Welcome to
-                                Zia Innovation Services, we have over 10 years of expertise
-                            </li>
+                                <i class="fa fa-globe" aria-hidden="true"></i> {{$setting->top_title}}</li>
                         </ul>
                     </div>
                 </div>
@@ -17,16 +15,15 @@
                         <ul>
                             <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="https://digitalcenturysf.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f567179705f6976746b706d317c7072">[email&#160;protected]</a></li> -->
                             <li>
-                                <a href="mailto:support@ziainnovation.com" style="color: #cacaca">
+                                <a href="mailto:{{$setting->email_two}}" style="color: #cacaca">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                    support@ziainnovation.com
+                                    {{$setting->email_two}}
                                 </a>
                             </li>
 
                             <li>
-                                <a href="tel:+918070101017" style="color: #cacaca">
-                                    <i class="fa fa-phone" aria-hidden="true"></i> +91 8070 10
-                                    10 17
+                                <a href="tel:{{$setting->contact_two}}" style="color: #cacaca">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> {{$setting->contact_two}}
                                 </a>
                             </li>
                         </ul>

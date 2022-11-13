@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <x-web.service />
+    <x-web.service :services="$service"/>
 
     <div class="home-about-area">
         <div class="container">
@@ -109,7 +109,7 @@
                                 and deliver exceptional work to all of our Client.
                             </p>
                             <div class="botton-area">
-                                <a href="about.html">Know More
+                                <a href="{{route('about')}}">Know More
                                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="about-featured-image">
-                        <a href="about.html"><img src="{{ asset('web/img/about/about.jpg') }}" alt="" /></a>
+                        <a href="{{route('about')}}"><img src="{{ asset('web/img/about/about.jpg') }}" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -353,11 +353,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="call-back-form">
-                        <form action="home_mail.php" method="POST">
+                        <form action="{{route('contact.mail')}}" method="POST">
+                            @csrf
                             <fieldset>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <select class="form-control" id="sel1" name="work">
+                                        <select class="form-control" id="sel1" name="message">
                                             <option>Planning for Website</option>
                                             <option>Planning for Web Application</option>
                                             <option>Planning for Windows Application</option>
@@ -423,9 +424,9 @@
                     <div class="single-news">
                         <div class="news-image">
                             <a href="single-news.html"><img src="{{ asset('web/img/news/1.png') }}" alt="" /></a>
-                            <div class="news-date">
+                            {{-- <div class="news-date">
                                 <p>10 <br />June<br />2016</p>
-                            </div>
+                            </div> --}}
                         </div>
                         <h3>
                             <a href="single-news.html">Why People Choose Zia Innovation</a>
@@ -440,9 +441,9 @@
                     <div class="single-news">
                         <div class="news-image">
                             <a href="single-news.html"><img src="{{ asset('web/img/news/2.png') }}" alt="" /></a>
-                            <div class="news-date">
+                            {{-- <div class="news-date">
                                 <p>10 <br />June<br />2016</p>
-                            </div>
+                            </div> --}}
                         </div>
                         <h3>
                             <a href="single-news.html">Why People Choose Zia Innovation</a>
@@ -456,9 +457,9 @@
                     <div class="single-news">
                         <div class="news-image">
                             <a href="single-news.html"><img src="{{ asset('web/img/news/3.png') }}" alt="" /></a>
-                            <div class="news-date">
+                            {{-- <div class="news-date">
                                 <p>10 <br />June<br />2016</p>
-                            </div>
+                            </div> --}}
                         </div>
                         <h3>
                             <a href="single-news.html">Why People Choose Zia Innovation</a>

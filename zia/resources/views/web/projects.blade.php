@@ -1,7 +1,15 @@
 @extends('layouts.web')
 
-@section('innerStyle')
+@section('innerstyle')
+@if ( Route::current()->getName() !== 'projects-by-service')
 
+    <style>
+        .project-content-area .row{
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+@endif
 @endsection
 
 @section('content')
@@ -13,84 +21,24 @@
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="project-content-area">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/hira.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
+                        <div class="row">
+                        @foreach ($projects as $item)
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
+                                <div class="single-project-one">
+                                    <div class="project-feature-image">
+                                        <a href="#"><img src="{{asset('storage/assets/projects/'.$item->img)}}" alt=""></a>
+                                        <div class="overley">
+                                            <ul>
+                                                <li><a href="{{$item->link}}"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    <h3><a href="single-project.html">{{$item->name}}</a></h3>
                                 </div>
-                                <h3><a href="single-project.html">Hira bakery</a></h3>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/color.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Colorsfusion</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/alarity.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Alarity IT Solution</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/sneha.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3><a href="#"></a>Sneha Packers</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/bollywood.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Way to Bollywood</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center padding-top">
-                            <div class="single-project-one">
-                                <div class="project-feature-image">
-                                    <a href="#"><img src="{{asset('web/img/project/drl.png')}}" alt=""></a>
-                                    <div class="overley">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3><a href="#">DRL Cargo</a></h3>
-                            </div>
-                        </div>
+                        @endforeach
+                    </div>
+
 
 
                         <div class="row">
