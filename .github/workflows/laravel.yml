@@ -11,9 +11,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-         server:    zia@ziainnovation.com
-        username:  ftp.ziainnovation.com
-        password:   Is`21048507
+        server:     ${{ secrets.SERVER }}
+        username:  ${{ secrets.USERNAME }}
+        password:   ${{ secrets.PASSWORD }}
         protocol: ftps
         port: 21
 
